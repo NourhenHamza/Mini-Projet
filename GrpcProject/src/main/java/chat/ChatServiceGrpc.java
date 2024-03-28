@@ -26,7 +26,7 @@ public final class ChatServiceGrpc {
 
   public static final String SERVICE_NAME = "chat.ChatService";
 
-  // Static method descriptors that strictly reflect the proto.
+   
   private static volatile io.grpc.MethodDescriptor<chat.Chat.MessageRequest,
       chat.Chat.MessageResponse> getSendMessageMethod;
 
@@ -90,43 +90,32 @@ public final class ChatServiceGrpc {
      }
      return getGetMessagesForUserMethod;
   }
-
-  /**
-   * Creates a new async stub that supports all call types for the service
-   */
+ 
   public static ChatServiceStub newStub(io.grpc.Channel channel) {
     return new ChatServiceStub(channel);
   }
 
-  /**
-   * Creates a new blocking-style stub that supports unary and streaming output calls on the service
-   */
+   
   public static ChatServiceBlockingStub newBlockingStub(
       io.grpc.Channel channel) {
     return new ChatServiceBlockingStub(channel);
   }
 
-  /**
-   * Creates a new ListenableFuture-style stub that supports unary calls on the service
-   */
+  
   public static ChatServiceFutureStub newFutureStub(
       io.grpc.Channel channel) {
     return new ChatServiceFutureStub(channel);
   }
 
-  /**
-   */
+   
   public static abstract class ChatServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     */
+     
     public void sendMessage(chat.Chat.MessageRequest request,
         io.grpc.stub.StreamObserver<chat.Chat.MessageResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getSendMessageMethod(), responseObserver);
     }
-
-    /**
-     */
+ 
     public void getMessagesForUser(chat.Chat.UserRequest request,
         io.grpc.stub.StreamObserver<chat.Chat.MessagesResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getGetMessagesForUserMethod(), responseObserver);
@@ -152,8 +141,7 @@ public final class ChatServiceGrpc {
     }
   }
 
-  /**
-   */
+   
   public static final class ChatServiceStub extends io.grpc.stub.AbstractStub<ChatServiceStub> {
     private ChatServiceStub(io.grpc.Channel channel) {
       super(channel);
@@ -170,16 +158,14 @@ public final class ChatServiceGrpc {
       return new ChatServiceStub(channel, callOptions);
     }
 
-    /**
-     */
+    
     public void sendMessage(chat.Chat.MessageRequest request,
         io.grpc.stub.StreamObserver<chat.Chat.MessageResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getSendMessageMethod(), getCallOptions()), request, responseObserver);
     }
 
-    /**
-     */
+     
     public void getMessagesForUser(chat.Chat.UserRequest request,
         io.grpc.stub.StreamObserver<chat.Chat.MessagesResponse> responseObserver) {
       asyncUnaryCall(
@@ -187,8 +173,7 @@ public final class ChatServiceGrpc {
     }
   }
 
-  /**
-   */
+   
   public static final class ChatServiceBlockingStub extends io.grpc.stub.AbstractStub<ChatServiceBlockingStub> {
     private ChatServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
@@ -204,24 +189,20 @@ public final class ChatServiceGrpc {
         io.grpc.CallOptions callOptions) {
       return new ChatServiceBlockingStub(channel, callOptions);
     }
-
-    /**
-     */
+ 
     public chat.Chat.MessageResponse sendMessage(chat.Chat.MessageRequest request) {
       return blockingUnaryCall(
           getChannel(), getSendMessageMethod(), getCallOptions(), request);
     }
 
-    /**
-     */
+     
     public chat.Chat.MessagesResponse getMessagesForUser(chat.Chat.UserRequest request) {
       return blockingUnaryCall(
           getChannel(), getGetMessagesForUserMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   */
+   
   public static final class ChatServiceFutureStub extends io.grpc.stub.AbstractStub<ChatServiceFutureStub> {
     private ChatServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
@@ -238,16 +219,14 @@ public final class ChatServiceGrpc {
       return new ChatServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     */
+     
     public com.google.common.util.concurrent.ListenableFuture<chat.Chat.MessageResponse> sendMessage(
         chat.Chat.MessageRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getSendMessageMethod(), getCallOptions()), request);
     }
 
-    /**
-     */
+     
     public com.google.common.util.concurrent.ListenableFuture<chat.Chat.MessagesResponse> getMessagesForUser(
         chat.Chat.UserRequest request) {
       return futureUnaryCall(

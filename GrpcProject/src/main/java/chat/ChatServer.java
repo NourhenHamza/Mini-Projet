@@ -10,7 +10,7 @@ public class ChatServer {
     private Server server;
 
     private void start() throws IOException {
-        int port = 9090; // Change port to match your service port
+        int port = 9090; 
         server = ServerBuilder.forPort(port)
                 .addService(new ChatServiceImpl())
                 .build()

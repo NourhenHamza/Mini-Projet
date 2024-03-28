@@ -27,7 +27,7 @@ public class ChatClient {
         channel.shutdown().awaitTermination(5, java.util.concurrent.TimeUnit.SECONDS);
     }
 
-    // Sends a message from one user to another
+  
     public void sendMessage(String senderId, String recipientId, String message) {
         Chat.MessageRequest request = Chat.MessageRequest.newBuilder()
                 .setSenderId(senderId)
@@ -38,8 +38,7 @@ public class ChatClient {
         Chat.MessageResponse response = blockingStub.sendMessage(request);
         System.out.println("Your message has been sent successfully. Status: " + response.getStatus());
     }
-
-    // Retrieves messages for a specific user
+ 
     public void getMessagesForUser(String userId) {
         Chat.UserRequest request = Chat.UserRequest.newBuilder()
                 .setUserId(userId)
@@ -58,7 +57,7 @@ public class ChatClient {
         }
     }
 
-    // Runs the chat application
+   
     public void startChat() {
     	System.out.println("--- Chat started ---           at  port: " + PORT);
         boolean running = true;
@@ -82,7 +81,7 @@ public class ChatClient {
         }
     }
 
-    // Prompts the user to enter details for sending a message
+    
     private void sendMessagePrompt() {
         System.out.print("Your user ID: ");
         String senderId = scanner.nextLine();
@@ -93,7 +92,7 @@ public class ChatClient {
         sendMessage(senderId, recipientId, message);
     }
 
-    // Prompts the user to enter their user ID for retrieving messages
+     
     private void retrieveMessagesPrompt() {
         System.out.print("Enter your user ID to retrieve messages: ");
         String userId = scanner.nextLine();
